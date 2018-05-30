@@ -374,7 +374,8 @@ public class ReflectiveFeign extends Feign {
                                       RequestTemplate mutable,
                                       Map<String, Object> variables) {
       Object body = argv[metadata.bodyIndex()];
-      checkArgument(body != null, "Body parameter %s was null", metadata.bodyIndex());
+      // 兼容dubbo升级上来的代码，不检车参数为null
+      // checkArgument(body != null, "Body parameter %s was null", metadata.bodyIndex());
       try {
         encoder.encode(body, metadata.bodyType(), mutable);
       } catch (EncodeException e) {

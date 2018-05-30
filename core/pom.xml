@@ -24,6 +24,7 @@
   </parent>
 
   <artifactId>feign-core</artifactId>
+  <version>9.8.2-cenpur-private</version>
   <name>Feign Core</name>
   <description>Feign Core</description>
 

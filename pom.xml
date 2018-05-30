@@ -119,7 +119,7 @@
     </developer>
   </developers>
 
-  <distributionManagement>
+<!--   <distributionManagement>
     <repository>
       <id>bintray</id>
       <url>https://api.bintray.com/maven/openfeign/maven/feign/;publish=1</url>
@@ -128,7 +128,20 @@
       <id>jfrog-snapshots</id>
       <url>http://oss.jfrog.org/artifactory/oss-snapshot-local</url>
     </snapshotRepository>
-  </distributionManagement>
+  </distributionManagement> -->
+  
+    <distributionManagement>
+        <repository>
+            <id>release</id>
+            <name>Nexus Release Repository</name>
+            <url>http://10.82.12.29:8081/repository/cenpur-release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://10.82.12.29:8081/repository/cenpur-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
   <issueManagement>
     <system>Github</system>
@@ -311,6 +324,7 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.20</version>
           <configuration>
+            <skipTests>true</skipTests>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
           </configuration>
         </plugin>
